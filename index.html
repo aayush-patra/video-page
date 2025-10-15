@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscape Video</title>
+    <style>
+      body { margin: 0; overflow: hidden; background: black; }
+      video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <video src="video.mp4" controls autoplay playsinline></video>
+    <script>
+      // Try to lock orientation
+      if (screen.orientation && screen.orientation.lock) {
+        screen.orientation.lock("landscape").catch(()=>{});
+      }
+    </script>
+  </body>
+</html>
